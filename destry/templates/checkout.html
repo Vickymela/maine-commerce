@@ -1,0 +1,188 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+    <!-- Breadcrumb Section Start -->
+    <div class="section">
+
+        <!-- Breadcrumb Area Start -->
+        <div class="breadcrumb-area bg-light">
+            <div class="container-fluid">
+                <div class="breadcrumb-content text-center">
+                    <h1 class="title">Checkout</h1>
+                    <ul>
+                        <li>
+                            <a href="index.html">Home </a>
+                        </li>
+                        <li class="active"> Checkout</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Breadcrumb Area End -->
+
+    </div>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Checkout Section Start -->
+    <div class="section section-margin">
+        <div class="container">
+            
+            <div class="row mb-n4">
+                <div class="col-lg-6 col-12 mb-4">
+
+                    <!-- Checkbox Form Start -->
+                    <form action="#" method="post">
+                        {% csrf_token %}
+                        <div class="checkbox-form">
+
+                            <!-- Checkbox Form Title Start -->
+                            <h3 class="title">Billing Details</h3>
+                            <!-- Checkbox Form Title End -->
+
+                            <div class="row">
+
+                                <!-- Select Country Name Start -->
+                                <div class="col-md-12 mb-6">
+                                    <div class="country-select">
+                                        <label>Country <span class="required">*</span></label>
+                                        <select class="myniceselect nice-select wide rounded-0" name="country">
+                                            <option value="Nigeria" selected >Nigeria</option>
+                                            <option value="Ghana">Ghana</option>
+                                            <option value="southAfrica">South Africa</option>
+                                            <option value="Kenya">Kenya</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- Select Country Name End -->
+
+                                <!-- First Name Input Start -->
+                                <div class="col-md-6">
+                                    <div class="checkout-form-list">
+                                        <label>First Name <span class="required">*</span></label>
+                                        <input placeholder="" type="text" name="fname" value={{user.first_name}}>
+                                    </div>
+                                </div>
+                                <!-- First Name Input End -->
+
+                                <!-- Last Name Input Start -->
+                                <div class="col-md-6">
+                                    <div class="checkout-form-list">
+                                        <label>Last Name <span class="required">*</span></label>
+                                        <input placeholder="" type="text" name="lname" value={{user.last_name}}>
+                                    </div>
+                                </div>
+                                <!-- Last Name Input End -->
+
+                                <!-- Company Name Input Start -->
+                                <div class="col-md-12">
+                                    <div class="checkout-form-list">
+                                        <label>Company Name</label>
+                                        <input placeholder="" type="text" name="company">
+                                    </div>
+                                </div>
+                                <!-- Company Name Input End -->
+
+                                <!-- Address Input Start -->
+                                <div class="col-md-12">
+                                    <div class="checkout-form-list">
+                                        <label>Address <span class="required">*</span></label>
+                                        <input placeholder="Street address" type="text" name="street">
+                                    </div>
+                                </div>
+                                <!-- Address Input End -->
+
+                                <!-- Optional Text Input Start -->
+                                <div class="col-md-12">
+                                    <div class="checkout-form-list">
+                                        <input placeholder="Apartment, suite, unit etc. (optional)" type="text" name="apartment">
+                                    </div>
+                                </div>
+                                <!-- Optional Text Input End -->
+
+                                <!-- Town or City Name Input Start -->
+                                <div class="col-md-12">
+                                    <div class="checkout-form-list">
+                                        <label>Town / City <span class="required">*</span></label>
+                                        <input type="text" name="town">
+                                    </div>
+                                </div>
+                                <!-- Town or City Name Input End -->
+
+                                <!-- State or Country Input Start -->
+                                <div class="col-md-6">
+                                    <div class="checkout-form-list">
+                                        <label>State / County <span class="required">*</span></label>
+                                        <input placeholder="" type="text" name="state">
+                                    </div>
+                                </div>
+                                <!-- State or Country Input End -->
+
+                                <!-- Postcode or Zip Input Start -->
+                                <div class="col-md-6">
+                                    <div class="checkout-form-list">
+                                        <label>Postcode / Zip <span class="required">*</span></label>
+                                        <input placeholder="" type="text" name="zipcode">
+                                    </div>
+                                </div>
+                                <!-- Postcode or Zip Input End -->
+
+                                <!-- Email Address Input Start -->
+                                <div class="col-md-6">
+                                    <div class="checkout-form-list">
+                                        <label>Email Address <span class="required">*</span></label>
+                                        <input placeholder="" type="email" name="email" value={{user.email}}>
+                                    </div>
+                                </div>
+                                <!-- Email Address Input End -->
+
+                                <!-- Phone Number Input Start -->
+                                <div class="col-md-6">
+                                    <div class="checkout-form-list">
+                                        <label>Phone <span class="required">*</span></label>
+                                        <input type="text"name="phone" value={{user.phone_Number}}>
+                                    </div>
+                                </div>
+                                <!-- Phone Number Input End -->
+
+                                <div class="order-button-payment">
+                                    <button type="submit" class="btn btn-dark btn-hover-primary rounded-0 w-100">Place Order</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+                    <!-- Checkbox Form End -->
+
+                </div>
+
+                <div class="col-lg-6 col-12 mb-4">
+
+                    <div class="your-order-area border">
+
+                    <h3 class="title">Your order</h3>
+                    <div class="your-order-table table-responsive">
+                        <table class="table">
+                            <tfoot>
+                                <tr class="cart-subtotal">
+                                    <th class="text-start ps-0">cart subtotal</th>
+                                    <td class="text-end pe-0"><span class="amount">{{subtotal}}</span></td>
+                                </tr>
+                                <tr class="order-total">
+                                    <th class="text-start ps-0">order total</th>
+                                    <td class="text-end pe-0"><strong><span class="amount">{{total}}</span></strong></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+    <!-- Checkout Section End -->
+
+
+{% endblock content%}
+   

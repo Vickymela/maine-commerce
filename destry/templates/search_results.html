@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    :root{
+      --background-color: #ffffff;
+      --text-color: #000000;
+      --accent-color: #1b1b1bff;
+    }
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    html, body{
+      width: 100%;
+      height: 100%%;
+    }
+    h2{
+      margin: 20px 0;
+    }
+    .search_list{
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      background-color: var(--background-color);
+      opacity: 0.9;
+      color: var(--text-color);
+      border: 2px solid var(--text-color);
+    }
+
+
+
+    .search_item{
+      width: 300px;
+      height: auto;
+      background-color: var(--background-color);
+      opacity: 1;
+      margin: 10px 0;
+      padding: 10px;
+      color: var(--text-color);
+      border-radius: 20px;
+    }
+    .search_item:hover{
+      background-color: var(--accent-color);
+      color: var(--background-color);
+      cursor: pointer;
+    }
+    .img-div{
+      width: 100%;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .img-div img{
+      border-radius: 20px;
+    }
+    .item_desc{
+      width: 100%;
+      height: 100px;
+d      overflow-y: scroll;
+    }
+    .item_desc::-webkit-scrollbar{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <section class="search_list">
+    <h2>Search Results</h2>
+    <p>You searched for: "{{ query }}"</p>
+    <a href="{% url 'home' %}"><img src="/static/assets/images/icons/cancel-icon.svg" alt="" width="24" height="24"></a>
+    <div class="search_list">
+      {% for item in results %}
+        {% comment %} <a href="{% url 'search' %}"> {% endcomment %}
+          <div class="search_item">
+            <div class="img-div">
+              <img src="{{ item.image.url }}" alt="{{ item.product_name }}" width="150" height="150">
+            </div>
+            <div class="item_desc">
+              <h3>{{ item.product_name }}</h3>
+              <small>{{ item.description }}</small>
+            </div>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </section>
+  <script src="/static/assets/js/all.js"></script>
+</body>
+</html>
