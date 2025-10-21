@@ -43,20 +43,12 @@
                     <div class="col d-none d-lg-block">
                         <div class="header-top-lan-curr-link">
                             <div class="header-top-lan dropdown">
-                                <button class="dropdown-toggle" data-bs-toggle="dropdown">English <i class="fa fa-angle-down"></i></button>
-                                <ul class="dropdown-menu dropdown-menu-right animate slideIndropdown">
-                                    <li><a class="dropdown-item" href="#">English</a></li>
-                                    <li><a class="dropdown-item" href="#">Japanese</a></li>
-                                    <li><a class="dropdown-item" href="#">Arabic</a></li>
-                                    <li><a class="dropdown-item" href="#">Romanian</a></li>
-                                </ul>
+                                <button class="dropdown-toggle" data-bs-toggle="dropdown">English </button>
+                               
                             </div>
                             <div class="header-top-curr dropdown">
-                                <button class="dropdown-toggle" data-bs-toggle="dropdown">USD <i class="fa fa-angle-down"></i></button>
-                                <ul class="dropdown-menu dropdown-menu-right animate slideIndropdown">
-                                    <li><a class="dropdown-item" href="#">USD</a></li>
-                                    <li><a class="dropdown-item" href="#">Pound</a></li>
-                                </ul>
+                                <button class="dropdown-toggle" data-bs-toggle="dropdown">USD </i></button>
+                             
                             </div>
                             <div class="header-top-links">
                                 <span>Call Us</span><a href="#"> 01234567</a>
@@ -106,16 +98,7 @@
                                     <li class="has-children">
                                         <a href="{% url "faq" %}"><span>FAQ</span></i></a>
                                     </li>
-                                    {% comment %} <li class="has-children">
-                                        <a href="#"><span>Blog</span> <i class="fa fa-angle-down"></i></a>
-                                        <ul class="sub-menu">
-                                            <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                                            <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                            <li><a href="blog-details-sidebar.html">Blog Details Sidebar</a></li>
-                                        </ul>
-                                    </li> {% endcomment %}
+                                    
                                     <li><a href="{% url "contact" %}"> <span>Contact</span></a></li>
                                 </ul>
                             </div>
@@ -177,35 +160,11 @@
                             </li>
                             <li class="has-children">
                                 <a href="#">Shop <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                <ul class="dropdown">
-                                    <li><a href="shop-grid.html">Shop Grid</a></li>
-                                    <li><a href="shop-left-sidebar.html">Shop Left Sidebar</a></li>
-                                    <li><a href="shop-right-sidebar.html">Shop Right Sidebar</a></li>
-                                    <li><a href="shop-list-fullwidth.html">Shop List Fullwidth</a></li>
-                                    <li><a href="shop-list-left-sidebar.html">Shop List Left Sidebar</a></li>
-                                    <li><a href="shop-list-right-sidebar.html">Shop List Right Sidebar</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                    <li><a href="cart.html">Shopping Cart</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="compare.html">Compare</a></li>
-                                </ul>
+                               
                             </li>
                             <li class="has-children">
                                 <a href="#">Product <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                <ul class="dropdown">
-                                    <li><a href="single-product.html">Single Product</a></li>
-                                    <li><a href="single-product-sale.html">Single Product Sale</a></li>
-                                    <li><a href="single-product-group.html">Single Product Group</a></li>
-                                    <li><a href="single-product-normal.html">Single Product Normal</a></li>
-                                    <li><a href="single-product-affiliate.html">Single Product Affiliate</a></li>
-                                    <li><a href="single-product-slider.html">Single Product Slider</a></li>
-                                    <li><a href="single-product-gallery-left.html">Gallery Left</a></li>
-                                    <li><a href="single-product-gallery-right.html">Gallery Right</a></li>
-                                    <li><a href="single-product-tab-style-left.html">Tab Style Left</a></li>
-                                    <li><a href="single-product-tab-style-right.html">Tab Style Right</a></li>
-                                    <li><a href="single-product-sticky-left.html">Sticky Left</a></li>
-                                    <li><a href="single-product-sticky-right.html">Sticky Right</a></li>
-                                </ul>
+
                             </li>
                             <li class="has-children">
                                 <a href="#">Pages <i class="fa fa-angle-down" aria-hidden="true"></i></a>
@@ -481,7 +440,7 @@
                         <div class="single-footer-widget aos-init aos-animate">
                             <h2 class="widget-title">My Account</h2>
                             <ul class="widget-list">
-                                <li><a href="account.html">My Account</a></li>
+                                <li><a href="{% url 'profile' %}">My Account</a></li>
                                
                                 <li><a href="{% url "contact" %}">Newsletter</a></li>
                                 <li><a href="{% url "contact" %}">Help Center</a></li>

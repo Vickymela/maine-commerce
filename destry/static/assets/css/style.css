@@ -15736,6 +15736,8 @@ ul li {
   visibility: visible;
 }
 
+
+
 /* Product Countdown */
 .countdown-wrapper .single-countdown {
   display: -webkit-box;
@@ -18006,7 +18008,30 @@ input[type=checkbox]:checked + label:after {
 
 .swiper-container-horizontal .swiper-wrapper .swiper-slide.product-wrapper.swiper-slide-active .product.product-border-left {
   border-left: 0;
+ 
+
 }
+/* CHATGPT */
+.swiper-container,
+.swiper-wrapper {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+/* .swiper-container,
+.swiper-wrapper,
+.swiper-slide,
+.product-carousel,
+.product-wrapper {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    height: auto !important;
+} */
+
+.product.mb-10 {
+    margin-bottom: 0 !important;
+}
+
+/* END OF CHAT */
 
 .thumb .image .first-image {
   opacity: 1;

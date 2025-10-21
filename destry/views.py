@@ -17,7 +17,7 @@ def home(request):
         'products':products
     }
 
-    return render(request,'index.html',context)
+    return render(request,'crosscheck_index.html',context)
 
 def about(request):
     return render(request,'about.html')

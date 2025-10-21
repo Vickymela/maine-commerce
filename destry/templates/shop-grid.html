@@ -11,7 +11,7 @@
                     <h1 class="title">Shop Grid</h1>
                     <ul>
                         <li>
-                            <a href="index.html">Home </a>
+                            <a href="{% url 'home' %}">Home </a>
                         </li>
                         <li class="active"> shop</li>
                     </ul>
@@ -84,15 +84,11 @@
                                         <img class="first-image" src="{{product.image.url}}" alt="Product" />
                                         <img class="second-image" src="{{product.image2.url}}" alt="Product" />
                                     </a>
-                                    <div class="actions">
-                                        <a href="wishlist.html" title="Wishlist" class="action wishlist"><i class="pe-7s-like"></i></a>
-                                        <a href="#" title="Quickview" class="action quickview" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="pe-7s-search"></i></a>
-                                        <a href="compare.html" title="Compare" class="action compare"><i class="pe-7s-shuffle"></i></a>
-                                    </div>
+                                    
                                 </div>
                                 <div class="content">
                                     <h4 class="sub-title"><a href="#">{{product.product_name}}</a></h4>
-                                    <h5 class="title"><a href="{% url 'product' product.id %}">{{product.product_type}}</a></h5>
+                                    <h5 class="title"><a href="#">{{product.product_type}}</a></h5>
                                     <span class="ratings">
                                             <span class="rating-wrap">
                                                 <span class="star" style="width: 100%"></span>
@@ -126,49 +122,7 @@
 
                     
                     </div>
-                    <!-- Shop Wrapper End -->
-
-                    <!--shop toolbar start-->
-                    {% comment %} <div class="shop_toolbar_wrapper mt-10"> {% endcomment %}
-
-                        {% comment %} <!-- Shop Top Bar Left start -->
-                        <div class="shop-top-bar-left">
-                            <div class="shop-short-by mr-4">
-                                <select class="nice-select rounded-0" aria-label=".form-select-sm example">
-                                    <option selected>Show 12 Per Page</option>
-                                    <option value="1">Show 12 Per Page</option>
-                                    <option value="2">Show 24 Per Page</option>
-                                    <option value="3">Show 15 Per Page</option>
-                                    <option value="3">Show 30 Per Page</option>
-                                </select>
-                            </div>
-                        </div>
-                        <!-- Shop Top Bar Left end -->
-
-                        <!-- Shopt Top Bar Right Start -->
-                        <div class="shop-top-bar-right">
-                            <nav>
-                                <ul class="pagination">
-                                    <li class="page-item disabled">
-                                        <a class="page-link" href="#" aria-label="Previous">
-                                            <span aria-hidden="true">&laquo;</span>
-                                        </a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link active" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Next">
-                                            <span aria-hidden="true">&raquo;</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <!-- Shopt Top Bar Right End --> {% endcomment %}
-
-                    {% comment %} </div> {% endcomment %}
-                    <!--shop toolbar end-->
+                   
 
                 </div>
             </div>
