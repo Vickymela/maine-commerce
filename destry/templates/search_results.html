@@ -80,10 +80,12 @@ d      overflow-y: scroll;
     <p>You searched for: "{{ query }}"</p>
     <a href="{% url 'home' %}"><img src="/static/assets/images/icons/cancel-icon.svg" alt="" width="24" height="24"></a>
     <div class="search_list">
-      {% for item in results %}
+     {% if results %}
+       {% for item in results %}
         {% comment %} <a href="{% url 'search' %}"> {% endcomment %}
           <div class="search_item">
             <div class="img-div">
+               <a href="{% url 'error' %}">
               <img src="{{ item.image.url }}" alt="{{ item.product_name }}" width="150" height="150">
             </div>
             <div class="item_desc">
@@ -93,6 +95,16 @@ d      overflow-y: scroll;
           </div>
         </a>
       {% endfor %}
+      {% else %}
+            <h1>ITEM NOT AVAILABLE FOR NOW </h1>
+          
+
+     
+     
+     
+     
+     
+     {% endif %}
     </div>
   </section>
   <script src="/static/assets/js/all.js"></script>

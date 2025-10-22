@@ -9,6 +9,7 @@ from django.contrib.auth.models import User
 from django.conf import settings
 import uuid
 import requests
+from django.db.models import Q
 
 # Create your views here.
 def home(request):
@@ -52,7 +53,7 @@ def search(request):
     query = request.GET.get('q')
     result = []
     if query:
-        result = Product.objects.filter(product_name__icontains = query, is_active = True)
+        result = Product.objects.filter(Q(product_name__icontains = query) |Q(product_type__name__icontains= query), is_active = True)
     context = {
         'results':result,
         'query': query
@@ -73,7 +74,7 @@ def shop(request):
 
 def single_product(request, id):
 
-    product = Product.objects.get(id = id)
+    product = Product.objects.get(id= id)
 
     context = {
         "product" : product
@@ -81,8 +82,13 @@ def single_product(request, id):
 
     return render(request, "single-product.html", context)
 
+def error_page(request):
+    return render(request,'error.html')
+
+
 def profile(request):
     if not request.user.is_authenticated:
+
         return redirect('login')
     
     user = get_user_model()
